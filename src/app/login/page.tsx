@@ -408,11 +408,64 @@ function LoginContent() {
               </span>
             </motion.button>
 
+            {/* Test Credentials Box */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+              className="mt-6 p-4 bg-blue-500/10 border border-blue-500/20 rounded-xl backdrop-blur-sm"
+            >
+              <div className="text-center mb-3">
+                <h3 className="text-blue-300 text-sm font-semibold">Test Credentials</h3>
+                <p className="text-neutral-400 text-xs">Use these to experience the platform</p>
+              </div>
+              <div className="space-y-3">
+                <div className="bg-white/5 rounded-lg p-3">
+                  <div className="flex justify-between items-center mb-1">
+                    <span className="text-blue-300 text-xs font-medium">Teacher Account</span>
+                    <button
+                      onClick={() => {
+                        setFormData(prev => ({
+                          ...prev,
+                          email: 'teacher.test@iiitkottayam.ac.in',
+                          password: 'TestTeacher123!'
+                        }));
+                      }}
+                      className="text-blue-400 hover:text-blue-300 text-xs underline"
+                    >
+                      Use
+                    </button>
+                  </div>
+                  <p className="text-neutral-300 text-xs font-mono">teacher.test@iiitkottayam.ac.in</p>
+                  <p className="text-neutral-300 text-xs font-mono">TestTeacher123!</p>
+                </div>
+                <div className="bg-white/5 rounded-lg p-3">
+                  <div className="flex justify-between items-center mb-1">
+                    <span className="text-green-300 text-xs font-medium">Student Account</span>
+                    <button
+                      onClick={() => {
+                        setFormData(prev => ({
+                          ...prev,
+                          email: 'student.test@iiitkottayam.ac.in',
+                          password: 'TestStudent123!'
+                        }));
+                      }}
+                      className="text-green-400 hover:text-green-300 text-xs underline"
+                    >
+                      Use
+                    </button>
+                  </div>
+                  <p className="text-neutral-300 text-xs font-mono">student.test@iiitkottayam.ac.in</p>
+                  <p className="text-neutral-300 text-xs font-mono">TestStudent123!</p>
+                </div>
+              </div>
+            </motion.div>
+
             {/* Info Text */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
+              transition={{ duration: 0.6, delay: 0.9 }}
               className="mt-6 text-center"
             >
               <p className="text-neutral-400 text-sm">
